@@ -1,27 +1,40 @@
-# Devaide
+# Devaide Agent Plugin
 
-## What is the Devaide Agent Plugin
+Research and delivery-tracking plugin for GitHub Copilot. Devaide combines GitHub and Atlassian MCP servers to help with repository investigation, pull request and issue research, Confluence documentation lookups, and Jira-based reporting for completed epics and fixed production issues.
 
-This repository contains a custom GitHub Copilot agent plugin called Devaide.
+## Installation
 
-The plugin helps with engineering research and delivery tracking by using MCP servers to:
+```bash
+# Using Copilot CLI
+copilot plugin install devaide@awesome-copilot
+```
 
-- Inspect GitHub repositories, pull requests, issues, branches, releases, and search results.
-- Search Atlassian documentation in Confluence.
-- Find completed and pending Jira work items across initiatives, epics, features, stories, and bugs.
+## What's Included
 
-## Where The Agent Is Defined
+### Agents
 
-The agent definition is in [agents/devaide.md](agents/devaide.md).
+- `devaide`: Copilot agent for GitHub delivery research, Confluence documentation lookups, and Jira work tracking across initiatives, epics, features, stories, and bugs.
 
-## MCP Servers Used
+### Skills
 
-The MCP configuration is in [.mcp.json](.mcp.json) and defines:
+- `completed-epics`: Produces a weekly report of Jira epics completed or released in the last seven days, enriched with Jira and Confluence business context.
+- `fixed-issues`: Produces a weekly report of production bugs closed in the last seven days, including business impact, root cause, and fix summary from Jira and Confluence.
 
-- github: GitHub MCP endpoint for repository and code-delivery operations.
-- rovo: Atlassian Rovo MCP endpoint for Jira and Confluence operations.
+## MCP Servers
 
-## Notes
+The MCP configuration lives in [.mcp.json](.mcp.json) and defines these backends:
 
-- Atlassian access requires the `atlassian_auth input` configured in [.mcp.json](.mcp.json).
-- This repo is focused on agent behavior and operational guidance rather than application code.
+- `github`: GitHub MCP endpoint for repository, issue, pull request, branch, release, and search operations.
+- `rovo`: Atlassian Rovo MCP endpoint for Jira and Confluence operations.
+
+Atlassian access requires the `atlassian_auth` prompt input configured in [.mcp.json](.mcp.json).
+
+## Repository Layout
+
+- [agents/devaide.md](agents/devaide.md): main agent definition and operating instructions.
+- [skills/completed_epics/SKILL.md](skills/completed_epics/SKILL.md): weekly completed epics reporting workflow.
+- [skills/fixed_issues/SKILL.md](skills/fixed_issues/SKILL.md): weekly fixed production issues reporting workflow.
+
+## Source
+
+This repository is a custom GitHub Copilot plugin focused on agent behavior and operational guidance rather than application code.
