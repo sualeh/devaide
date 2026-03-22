@@ -9,15 +9,13 @@
   "repository": "https://github.com/github/awesome-copilot",
   "license": "EPL-2.0",
   "keywords": [
-    "frontend",
-    "web",
-    "react",
-    "typescript",
-    "javascript",
-    "css",
-    "html",
-    "angular",
-    "vue"
+    "github",
+    "rovo",
+    "jira",
+    "confluence",
+    "atlassian",
+    "pull-requests",
+    "research"
   ],
   "agents": [
     "./agents"
