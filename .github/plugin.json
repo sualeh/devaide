@@ -21,7 +21,7 @@
     "./agents"
   ],
   "skills": [
-    "./skills/playwright-explore-website",
-    "./skills/playwright-generate-test"
+    "./skills/completed_epics",
+    "./skills/fixed_issues"
   ]
 }
