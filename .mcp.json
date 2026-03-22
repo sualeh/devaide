@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "rovo": {
+      "type": "http",
+      "url": "https://mcp.atlassian.com/v1/mcp",
+      "headers": {
+        "Authorization": "Basic ${input:atlassian_auth}"
+      }
+    },
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/"
+    }
+  },
+  "inputs": [
+    {
+      "id": "atlassian_auth",
+      "type": "promptString",
+      "description": "Basic authorization header Atlassian Rovo MCP Server",
+      "password": true
+    }
+  ]
+}
