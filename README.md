@@ -24,8 +24,8 @@ copilot plugin install devaide@awesome-copilot
 
 The MCP configuration lives in [.mcp.json](.mcp.json) and defines these backends:
 
-- `github`: GitHub MCP endpoint for repository, issue, pull request, branch, release, and search operations.
-- `rovo`: Atlassian Rovo MCP endpoint for Jira and Confluence operations.
+- `devaide-github`: GitHub MCP endpoint for repository, issue, pull request, branch, release, and search operations.
+- `devaide-rovo`: Atlassian Rovo MCP endpoint for Jira and Confluence operations.
 
 Atlassian access requires the `atlassian_auth` prompt input configured in [.mcp.json](.mcp.json).
 
