@@ -17,7 +17,12 @@ Generate a report of Jira epics that were completed or released in the last seve
 
 Do not attempt any further steps until connectivity is confirmed.
 
-## Step 1 — Query Completed Epics
+## Step 1 — Get the Atlassian Cloud Id
+
+Use the Rovo MCP server to obtain the Atlassian Cloud ID for your Jira instance. This ID is required for subsequent API calls to fetch epics and related information. Also get the base URL for your Jira instance, which will be used to construct direct links to the epics. Prompt the user for the  and Atlassian base URL if they are not already configured, and get the Atlassian Cloud ID from the Rovo MCP server.
+
+
+## Step 2 — Query Completed Epics
 
 Use the Rovo MCP server to run the following JQL query and retrieve all matching epics:
 
@@ -40,7 +45,7 @@ If no epics are returned, output:
 
 Then stop.
 
-## Step 2 — Gather Business Context
+## Step 3 — Gather Business Context
 
 For each epic found in Step 1, use the Rovo MCP server to gather supporting context:
 
@@ -49,7 +54,7 @@ For each epic found in Step 1, use the Rovo MCP server to gather supporting cont
 
 Prioritise information that explains *what problem was solved* and *what business value was delivered*, rather than implementation details.
 
-## Step 3 — Generate the Report
+## Step 4 — Generate the Report
 
 Produce a Markdown report with the following structure for each completed epic:
 
