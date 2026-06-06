@@ -1,0 +1,12 @@
+{
+  "name": "devaide",
+  "description": "Uses the Atlassian Rovo and GitHub MCP servers to research code, work items and related documentation.",
+  "version": "0.0.1",
+  "author": {
+    "name": "Sualeh Fatehi",
+    "email": "sualeh@hotmail.com"
+  },
+  "agents": "./agents",
+  "skills": "./skills",
+  "mcpServers": ".mcp.json"
+}

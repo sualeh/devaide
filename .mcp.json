@@ -10,6 +10,13 @@
     "devaide-github": {
       "type": "http",
       "url": "https://api.githubcopilot.com/mcp/"
+    },
+    "devaide-context7": {
+      "type": "http",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "${input:context7-api-key}"
+      }
     }
   },
   "inputs": [
@@ -17,6 +24,12 @@
       "id": "atlassian_auth",
       "type": "promptString",
       "description": "Basic authorization header Atlassian Rovo MCP Server",
+      "password": true
+    },
+    {
+      "id": "context7-api-key",
+      "type": "promptString",
+      "description": "API key for Context7 MCP Server",
       "password": true
     }
   ]

@@ -1,6 +1,7 @@
 ---
 name: fixed-issues
-description: Reports on Production bugs and issues fixed and deployed to Production in the last week, with root cause, business impact, and fix details from Jira and Confluence. Provides Jira bug ticket number and link. USE FOR: weekly production bug fix reports; post-incident reviews; stakeholder updates on resolved defects.
+description: Reports on Production bugs and issues fixed and deployed to Production in the last week, with root cause, business impact, and fix details from Jira and Confluence. Provides Jira bug ticket number and link.
+  Use for weekly production bug fix reports; post-incident reviews; stakeholder updates on resolved defects.
 ---
 
 # Fixed Production Issues Report

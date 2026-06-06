@@ -1,6 +1,7 @@
 ---
 name: completed-epics
-description: Reports on Jira epics completed or released in the last week, with business context from Jira and Confluence. Provides epic number, description, Jira link, and a brief business summary. USE FOR: weekly epic completion reports; sprint/release reviews; stakeholder updates on delivered work.
+description: Reports on Jira epics completed or released in the last week, with business context from Jira and Confluence. Provides epic number, description, Jira link, and a brief business summary.
+  Use for weekly epic completion reports; sprint/release reviews; stakeholder updates on delivered work.
 ---
 
 # Completed Epics Report
