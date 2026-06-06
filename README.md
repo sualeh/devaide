@@ -1,6 +1,6 @@
 # Devaide Agent Plugin
 
-Research and delivery-tracking plugin for GitHub Copilot. Devaide combines GitHub and Atlassian MCP servers to help with repository investigation, pull request and issue research, Confluence documentation lookups, and Jira-based reporting for completed epics and fixed production issues.
+Research and delivery-tracking plugin for GitHub Copilot. Devaide combines GitHub, Atlassian, and Context7 MCP servers to help with repository investigation, pull request and issue research, Confluence and external documentation lookups, and Jira-based reporting for completed epics and fixed production issues.
 
 ## What's Included
 
@@ -19,6 +19,7 @@ Defined in [.mcp.json](.mcp.json) and registered automatically when the plugin i
 
 - `devaide-github`: GitHub MCP endpoint for repository, issue, pull request, branch, release, and search operations.
 - `devaide-rovo`: Atlassian Rovo MCP endpoint for Jira and Confluence operations.
+- `devaide-context7`: Context7 MCP endpoint for external library and framework documentation lookups.
 
 ## Installing devaide in Another Project
 
@@ -78,7 +79,9 @@ To recommend devaide to your whole team, add the following to `.github/copilot/s
 
 Team members see an install prompt the first time they open chat in that workspace.
 
-## Required Configuration — Atlassian Auth
+## Required Configuration
+
+### Atlassian Auth (Required)
 
 The `devaide-rovo` MCP server requires an Atlassian API token. On first use, VS Code prompts for the `atlassian_auth` secret.
 
@@ -94,6 +97,15 @@ The `devaide-rovo` MCP server requires an Atlassian API token. On first use, VS 
 3. Enter the resulting Base64 string when VS Code prompts for `atlassian_auth`.
 
 The GitHub MCP server (`devaide-github`) uses your existing GitHub Copilot authentication — no additional setup is needed.
+
+### Context7 API Key (Optional, recommended)
+
+The `devaide-context7` MCP server uses a Context7 API key. On first use, VS Code prompts for `context7-api-key`.
+
+1. Create or copy your Context7 API key from your Context7 account.
+2. Enter the key when VS Code prompts for `context7-api-key`.
+
+If you skip this input, GitHub and Atlassian workflows continue to work, but Context7 documentation lookup features are unavailable.
 
 ## Using the Plugin
 
@@ -121,7 +133,7 @@ Skills can also be enabled via **Configure Skills** in the Chat view header.
 ## Repository Layout
 
 - [plugin.json](plugin.json): plugin manifest (name, version, agents, skills, MCP servers).
-- [.mcp.json](.mcp.json): MCP server definitions for GitHub and Atlassian Rovo.
+- [.mcp.json](.mcp.json): MCP server definitions for GitHub, Atlassian Rovo, and Context7.
 - [agents/devaide.md](agents/devaide.md): main agent definition and operating instructions.
 - [skills/completed_epics/SKILL.md](skills/completed_epics/SKILL.md): weekly completed epics reporting workflow.
 - [skills/fixed_issues/SKILL.md](skills/fixed_issues/SKILL.md): weekly fixed production issues reporting workflow.
